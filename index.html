@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic Light Theme Hero</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Premium Fonts: Playfair Display for elegance, Anton for ultra-bold block impact, Inter for base text -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500;1,600&family=Anton&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+
+
+    <!-- The 3D Image Sequence -->
+    <canvas id="hero-lightpass"></canvas>
+    
+    <!-- Foreground Scroll Sequence -->
+    <div id="content-overlay">
+        
+        <!-- Step 1: Intro -->
+        <section class="step step-1">
+            <div class="hero-intro">
+                <p class="greeting reveal-text-y">Hi, I am</p>
+                <h1 class="name-title reveal-text-y">KARTHIKEYA</h1>
+                <div class="line-decorator scale-x"></div>
+            </div>
+        </section>
+
+        <!-- Step 2: Role -->
+        <section class="step step-2">
+            <div class="hero-role right">
+                <h2 class="reveal-text-y">AI-POWERED</h2>
+                <h2 class="reveal-text-y outline-dark">DEVELOPER.</h2>
+            </div>
+        </section>
+
+        <!-- Step 3: Full Stack Role -->
+        <section class="step step-3">
+            <div class="hero-role left">
+                <h2 class="reveal-text-y">FULL STACK</h2>
+                <h2 class="reveal-text-y outline-dark">DEVELOPER.</h2>
+            </div>
+        </section>
+
+        <!-- Step 4: Animator Role -->
+        <section class="step step-4">
+            <div class="hero-role right">
+                <h2 class="reveal-text-y">CREATIVE</h2>
+                <h2 class="reveal-text-y outline-dark">ANIMATOR.</h2>
+            </div>
+        </section>
+
+        <!-- Step 5: Closing -->
+        <section class="step step-5">
+            <div class="hero-closing center">
+                <h1 class="reveal-text-y">WELCOME TO</h1>
+                <h1 class="reveal-text-y accent-text">MY PORTFOLIO</h1>
+            </div>
+        </section>
+
+        <!-- Extra space to finish scrolling the 3D model gracefully -->
+        <section class="step step-spacer"></section>
+
+        <!-- Fixed Scroll Indicator -->
+        <div class="scroll-indicator">
+            <p>SCROLL TO EXPLORE</p>
+            <div class="line"></div>
+        </div>
+    </div>
+
+    <!-- GSAP Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

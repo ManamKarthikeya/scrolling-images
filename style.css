@@ -1,0 +1,199 @@
+:root {
+    --bg-color: #ffffff;
+    --text-main: #0a0a0a;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-color);
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    overflow-x: hidden;
+    /* Clean futuristic grid */
+    background-image: linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+/* Landscape text behind everything */
+#background-text-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.landscape-text {
+    font-family: 'Impact', 'Anton', sans-serif;
+    font-size: 15vw;
+    line-height: 0.9;
+    margin: 0;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #f2f2f2;
+    letter-spacing: -1px;
+}
+
+.landscape-text.outline {
+    color: transparent;
+    -webkit-text-stroke: 2px #e5e5e5;
+}
+
+#hero-lightpass {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    pointer-events: none;
+    mix-blend-mode: multiply; /* Set to multiply so white image backgrounds blend with the grid and reveal background text */
+}
+
+/* Scroll area */
+#content-overlay {
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Scrolling Foreground Elements */
+.step {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    box-sizing: border-box;
+}
+
+.step-spacer {
+    min-height: 100vh;
+}
+
+.hero-intro, .hero-role, .hero-closing {
+    /* To allow pointer events if needed, but not strictly required */
+    pointer-events: auto;
+}
+
+.hero-role.left {
+    margin-right: auto;
+    text-align: left;
+}
+
+.hero-role.right {
+    margin-left: auto;
+    text-align: right;
+}
+
+.hero-closing.center {
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* The elegant "Hi, I am" */
+.greeting {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: #555;
+    margin: 0 0 -0.5rem 0;
+    font-weight: 500;
+}
+
+/* The bold KARTHIKEYA */
+.name-title {
+    font-family: 'Impact', 'Anton', sans-serif;
+    font-size: clamp(5rem, 10vw, 12rem);
+    margin: 0;
+    letter-spacing: 0px;
+    color: #111;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.line-decorator {
+    width: 100px;
+    height: 5px;
+    background: #00F0FF;
+    margin-top: 1rem;
+    transform-origin: left;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+}
+
+.hero-role h2, .hero-closing h1 {
+    font-family: 'Impact', 'Anton', sans-serif;
+    font-size: clamp(4rem, 8vw, 8rem);
+    margin: 0;
+    line-height: 1.1;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+}
+
+.outline-dark {
+    color: transparent;
+    -webkit-text-stroke: 2px #111;
+}
+
+.accent-text {
+    background: linear-gradient(135deg, #00F0FF, #B026FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Animation utilities for JS */
+.reveal-text-y {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    overflow: hidden;
+}
+
+.scroll-indicator {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    z-index: 10;
+}
+
+.scroll-indicator p {
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    color: #888;
+    font-weight: 600;
+    margin: 0;
+}
+
+.scroll-indicator .line {
+    width: 2px;
+    height: 50px;
+    background: #e0e0e0;
+    overflow: hidden;
+    position: relative;
+}
+
+.scroll-indicator .line::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #00F0FF;
+    animation: drop 1.5s infinite ease-in-out;
+}
+
+@keyframes drop {
+    0% { top: -100%; }
+    100% { top: 100%; }
+}
